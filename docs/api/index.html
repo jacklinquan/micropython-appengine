@@ -1,0 +1,1469 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="A MicroPython app engine." name="description"/>
+<meta content="Quan Lin" name="author"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.3.1, mkdocs-material-8.3.9" name="generator"/>
+<title>API Reference - micropython-appengine</title>
+<link href="../assets/stylesheets/main.1d29e8d0.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../css/print-site.css" rel="stylesheet"/>
+<link href="../css/print-site-material.css" rel="stylesheet"/>
+<link href="../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../assets/css/material.css" rel="stylesheet"/>
+<link href="../assets/css/mkdocstrings.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#api-reference">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="micropython-appengine" class="md-header__button md-logo" data-md-component="logo" href=".." title="micropython-appengine">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            micropython-appengine
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/jacklinquan/micropython-appengine" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    micropython-appengine
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="micropython-appengine" class="md-nav__button md-logo" data-md-component="logo" href=".." title="micropython-appengine">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    micropython-appengine
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/jacklinquan/micropython-appengine" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    micropython-appengine
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        API Reference
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.AppEngineException">
+    AppEngineException
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.InputDevice">
+    InputDevice
+  </a>
+<nav aria-label="InputDevice" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.InputDevice.update">
+    update()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager">
+    Manager
+  </a>
+<nav aria-label="Manager" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.add_sprite">
+    add_sprite()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.arun">
+    arun()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.exit">
+    exit()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.get_sprites">
+    get_sprites()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.kill_sprites">
+    kill_sprites()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.run">
+    run()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.update">
+    update()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen">
+    Screen
+  </a>
+<nav aria-label="Screen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen.blit">
+    blit()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen.clear">
+    clear()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen.flip">
+    flip()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen.update">
+    update()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite">
+    Sprite
+  </a>
+<nav aria-label="Sprite" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.check_collision">
+    check_collision()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.clamp_position">
+    clamp_position()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.clamp_velocity">
+    clamp_velocity()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.get_layer">
+    get_layer()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.kill">
+    kill()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.kill_after_n_frames">
+    kill_after_n_frames()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.set_layer">
+    set_layer()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.setup_animation">
+    setup_animation()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.update">
+    update()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.AppEngineException">
+    AppEngineException
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.InputDevice">
+    InputDevice
+  </a>
+<nav aria-label="InputDevice" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.InputDevice.update">
+    update()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager">
+    Manager
+  </a>
+<nav aria-label="Manager" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.add_sprite">
+    add_sprite()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.arun">
+    arun()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.exit">
+    exit()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.get_sprites">
+    get_sprites()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.kill_sprites">
+    kill_sprites()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.run">
+    run()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Manager.update">
+    update()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen">
+    Screen
+  </a>
+<nav aria-label="Screen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen.blit">
+    blit()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen.clear">
+    clear()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen.flip">
+    flip()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Screen.update">
+    update()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite">
+    Sprite
+  </a>
+<nav aria-label="Sprite" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.check_collision">
+    check_collision()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.clamp_position">
+    clamp_position()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.clamp_velocity">
+    clamp_velocity()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.get_layer">
+    get_layer()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.kill">
+    kill()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.kill_after_n_frames">
+    kill_after_n_frames()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.set_layer">
+    set_layer()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.setup_animation">
+    setup_animation()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#micropython-appengine.Sprite.update">
+    update()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">#</a></h1>
+<div class="doc doc-object doc-module">
+<div class="doc doc-contents first">
+<p>A MicroPython app engine.</p>
+<ul>
+<li>Author: Quan Lin</li>
+<li>License: MIT</li>
+</ul>
+<div class="doc doc-children">
+<div class="doc doc-object doc-class">
+<h2 class="doc doc-heading" id="micropython-appengine.AppEngineException">
+<code>AppEngineException</code>
+<a class="headerlink" href="#micropython-appengine.AppEngineException" title="Permanent link">#</a></h2>
+<div class="doc doc-contents">
+<p class="doc doc-class-bases">
+        Bases: <code>Exception</code></p>
+<p>A class for <code>appengine</code> exception.</p>
+</div>
+</div>
+<div class="doc doc-object doc-class">
+<h2 class="doc doc-heading" id="micropython-appengine.InputDevice">
+<code class="highlight language-python"><span class="n">InputDevice</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.InputDevice" title="Permanent link">#</a></h2>
+<div class="doc doc-contents">
+<p>A class for the input device.</p>
+<details class="note">
+<summary>Note</summary>
+<p>This class needs to be subclassed to be useful.
+Override <code>__init__()</code> to initialise the input device.
+Override <code>update()</code> to implement the logic of the input device.</p>
+</details>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.InputDevice.update">
+<code class="highlight language-python"><span class="n">update</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.InputDevice.update" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>This method should implement the logic of the input device.</p>
+<p>It is called before every frame by the manager.</p>
+<p><strong>Raises:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code><a class="autorefs autorefs-internal" title="micropython-appengine.AppEngineException" href="#micropython-appengine.AppEngineException">AppEngineException</a></code>
+</td>
+<td><p>An error occurred when this class is not subclassed.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>Note</summary>
+<p>This method must be overridden by a subclass.</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-class">
+<h2 class="doc doc-heading" id="micropython-appengine.Manager">
+<code class="highlight language-python"><span class="n">Manager</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Manager" title="Permanent link">#</a></h2>
+<div class="doc doc-contents">
+<p>A class for app manager.</p>
+<p><strong>Attributes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEFAULT_TARGET_FPS</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p><code>20</code>, default target FPS (frames per second).</p></td>
+</tr>
+<tr>
+<td><code>input_device</code></td>
+<td>
+<code><a class="autorefs autorefs-internal" title="micropython-appengine.InputDevice" href="#micropython-appengine.InputDevice">InputDevice</a></code>
+</td>
+<td><p>The input device.</p></td>
+</tr>
+<tr>
+<td><code>screen</code></td>
+<td>
+<code><a class="autorefs autorefs-internal" title="micropython-appengine.Screen" href="#micropython-appengine.Screen">Screen</a></code>
+</td>
+<td><p>The screen.</p></td>
+</tr>
+<tr>
+<td><code>sprite_list</code></td>
+<td>
+<code>list</code>
+</td>
+<td><p>The list holding all the available sprites.</p></td>
+</tr>
+<tr>
+<td><code>target_fps</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>The target FPS.</p></td>
+</tr>
+<tr>
+<td><code>actual_fps</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>The actual FPS.</p></td>
+</tr>
+<tr>
+<td><code>running</code></td>
+<td>
+<code>bool</code>
+</td>
+<td><p>The flag indicating the app is running or not.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>Note</summary>
+<p>This class needs to be subclassed to be useful.
+Override <code>__init__()</code> to initialise the manager.
+Override <code>update()</code> to implement the logic of the manager.</p>
+</details>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Manager.add_sprite">
+<code class="highlight language-python"><span class="n">add_sprite</span><span class="p">(</span><span class="n">sprite</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Manager.add_sprite" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Add a sprite to the manager.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sprite</code></td>
+<td>
+<code><a class="autorefs autorefs-internal" title="micropython-appengine.Sprite" href="#micropython-appengine.Sprite">Sprite</a></code>
+</td>
+<td><p>The sprite to be added to the manager.</p></td>
+<td>
+<em>required</em>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Manager.arun">
+<code class="highlight language-python"><span class="n">arun</span><span class="p">()</span></code>
+<span class="doc doc-labels">
+<small class="doc doc-label doc-label-async"><code>async</code></small>
+</span>
+<a class="headerlink" href="#micropython-appengine.Manager.arun" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Run the app asynchronously with <code>uasyncio</code>.</p>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Manager.exit">
+<code class="highlight language-python"><span class="n">exit</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Manager.exit" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Exit the app.</p>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Manager.get_sprites">
+<code class="highlight language-python"><span class="n">get_sprites</span><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><span class="n">Sprite</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Manager.get_sprites" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Get a filtered list of sprites.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cls</code></td>
+<td>
+<code>type</code>
+</td>
+<td><p>The class of the sprites that should be returned.</p></td>
+<td>
+<code>Sprite</code>
+</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>
+<code>str</code>
+</td>
+<td><p>The name of the sprites that should be returned.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>list[<a class="autorefs autorefs-internal" title="micropython-appengine.Sprite" href="#micropython-appengine.Sprite">Sprite</a>, ...]</code>
+</td>
+<td><p>A list of selected sprites.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Manager.kill_sprites">
+<code class="highlight language-python"><span class="n">kill_sprites</span><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><span class="n">Sprite</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Manager.kill_sprites" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Kill a filtered list of sprites.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cls</code></td>
+<td>
+<code>type</code>
+</td>
+<td><p>The class of the sprites that should be killed.</p></td>
+<td>
+<code>Sprite</code>
+</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>
+<code>str</code>
+</td>
+<td><p>The name of the sprites that should be killed.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Manager.run">
+<code class="highlight language-python"><span class="n">run</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Manager.run" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Run the app.</p>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Manager.update">
+<code class="highlight language-python"><span class="n">update</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Manager.update" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>This method may implement the logic of the manager.</p>
+<p>It is called before every frame.
+A very simple app may not override it.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-class">
+<h2 class="doc doc-heading" id="micropython-appengine.Screen">
+<code class="highlight language-python"><span class="n">Screen</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Screen" title="Permanent link">#</a></h2>
+<div class="doc doc-contents">
+<p>A class for the screen.</p>
+<p><strong>Attributes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>display</code></td>
+<td>
+<code>FrameBuffer</code>
+</td>
+<td><p>A display object whose class is a subclass of <code>FrameBuffer</code>.
+For example, an SSD1306 driver object.</p></td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>The width of the screen in pixel.</p></td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>The height of the screen in pixel.</p></td>
+</tr>
+<tr>
+<td><code>camera_target</code></td>
+<td>
+<code><a class="autorefs autorefs-internal" title="micropython-appengine.Sprite" href="#micropython-appengine.Sprite">Sprite</a></code>
+</td>
+<td><p>If not <code>None</code>, the screen camera will follow this sprite.
+The center of this sprite will be placed at the center of the screen.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>Note</summary>
+<p>This class needs to be subclassed to be useful.
+Override <code>__init__()</code> to initialise the screen.
+Override <code>update()</code> to show the content of the screen from its buffer.</p>
+</details>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Screen.blit">
+<code class="highlight language-python"><span class="n">blit</span><span class="p">(</span><span class="n">sprite</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Screen.blit" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Blit the sprite at its position in the screen.</p>
+<p>It is called before every frame for each sprite added to the manager.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sprite</code></td>
+<td>
+<code><a class="autorefs autorefs-internal" title="micropython-appengine.Sprite" href="#micropython-appengine.Sprite">Sprite</a></code>
+</td>
+<td><p>A sprite to be placed in the screen at its position.</p></td>
+<td>
+<em>required</em>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Screen.clear">
+<code class="highlight language-python"><span class="n">clear</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Screen.clear" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Clear the screen buffer and update it.</p>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Screen.flip">
+<code class="highlight language-python"><span class="n">flip</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Screen.flip" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Update the screen and clear the screen buffer.</p>
+<p>It is called before every frame by the manager.</p>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Screen.update">
+<code class="highlight language-python"><span class="n">update</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Screen.update" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>This method should show the content of the screen from its buffer.</p>
+<p>For example, the <code>show()</code> method of an SSD1306 driver can be called here.</p>
+<p><strong>Raises:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code><a class="autorefs autorefs-internal" title="micropython-appengine.AppEngineException" href="#micropython-appengine.AppEngineException">AppEngineException</a></code>
+</td>
+<td><p>An error occurred when this class is not subclassed.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>Note</summary>
+<p>This method must be overridden by a subclass.</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-class">
+<h2 class="doc doc-heading" id="micropython-appengine.Sprite">
+<code class="highlight language-python"><span class="n">Sprite</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite" title="Permanent link">#</a></h2>
+<div class="doc doc-contents">
+<p>A class for app sprites.</p>
+<p><strong>Attributes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UP</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p><code>1</code>, direction up.</p></td>
+</tr>
+<tr>
+<td><code>LEFT</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p><code>2</code>, direction left.</p></td>
+</tr>
+<tr>
+<td><code>DOWN</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p><code>3</code>, direction down.</p></td>
+</tr>
+<tr>
+<td><code>RIGHT</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p><code>4</code>, direction right.</p></td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>The x position of the sprite.</p></td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>The y position of the sprite.</p></td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>The width of the sprite in pixel.</p></td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>The height of the sprite in pixel.</p></td>
+</tr>
+<tr>
+<td><code>vx</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>The x velocity of the sprite.</p></td>
+</tr>
+<tr>
+<td><code>vy</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>The y velocity of the sprite.</p></td>
+</tr>
+<tr>
+<td><code>imgs</code></td>
+<td>
+<code>list</code>
+</td>
+<td><p>The list of images to represent the sprite.
+A sequence of images can make animation.</p></td>
+</tr>
+<tr>
+<td><code>img_idx</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>The index of the image to be shown.</p></td>
+</tr>
+<tr>
+<td><code>img_fpstep_counter</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>Frames per step counter for animation.</p></td>
+</tr>
+<tr>
+<td><code>colourkey</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>Transparent colour, <code>-1</code> means no transparent colour.</p></td>
+</tr>
+<tr>
+<td><code>is_overlay</code></td>
+<td>
+<code>bool</code>
+</td>
+<td><p>If True, the sprite is ignored by screen camera.</p></td>
+</tr>
+<tr>
+<td><code>manager</code></td>
+<td>
+<code><a class="autorefs autorefs-internal" title="micropython-appengine.Manager" href="#micropython-appengine.Manager">Manager</a></code>
+</td>
+<td><p>The manager of the app.
+When a sprite is added to the manager, this attribute is set automatically.</p></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>
+<code>str</code>
+</td>
+<td><p>The name of the sprite.</p></td>
+</tr>
+<tr>
+<td><code>killed</code></td>
+<td>
+<code>bool</code>
+</td>
+<td><p>If True, the sprite will be removed by the manager.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>Note</summary>
+<p>This class needs to be subclassed to be useful.
+Override <code>__init__()</code> to initialise the sprite.
+Override <code>update()</code> to implement the logic of the sprite.</p>
+</details>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Sprite.check_collision">
+<code class="highlight language-python"><span class="n">check_collision</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite.check_collision" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Check collision with the other sprite.</p>
+<p>This is a simple example of collision detection.
+It can be overridden with other implementation.
+When there is no collision detected, it returns <code>None</code>.
+When collision is detected, a 2-tuple is returned.
+The first element indicates where the collision happened.
+It could be <code>Sprite.UP</code>, <code>Sprite.LEFT</code>, <code>Sprite.DOWN</code> or <code>Sprite.RIGHT</code>.
+The second element indicates how deep the collision is in pixel.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other</code></td>
+<td>
+<code><a class="autorefs autorefs-internal" title="micropython-appengine.Sprite" href="#micropython-appengine.Sprite">Sprite</a></code>
+</td>
+<td><p>The other sprite to check collision with.</p></td>
+<td>
+<em>required</em>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>tuple[int, int]</code>
+</td>
+<td><p>A 2-tuple or <code>None</code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Sprite.clamp_position">
+<code class="highlight language-python"><span class="n">clamp_position</span><span class="p">(</span><span class="n">up</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">down</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite.clamp_position" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Clamp the position of the sprite.</p>
+<p>This method clamps the position of the sprite.
+The size of the sprite is taken into account.
+The up and left limits are inclusive.
+The down and right limits are exclusive.
+When there is conflict in left and right limits, the left limit overrides.
+When there is conflict in up and down limits, the up limit overrides.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>up</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>Up limit of the up side of the sprite.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+<tr>
+<td><code>left</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>Left limit of the left side of the sprite.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+<tr>
+<td><code>down</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>Down limit of the down side of the sprite.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>Right limit of the right side of the sprite.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Sprite.clamp_velocity">
+<code class="highlight language-python"><span class="n">clamp_velocity</span><span class="p">(</span><span class="n">vx_min</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vx_max</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vy_min</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vy_max</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite.clamp_velocity" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Clamp the velocity of the sprite.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vx_min</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>Min limit of x velocity of the sprite.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+<tr>
+<td><code>vx_max</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>Max limit of x velocity of the sprite.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+<tr>
+<td><code>vy_min</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>Min limit of y velocity of the sprite.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+<tr>
+<td><code>vy_max</code></td>
+<td>
+<code>float</code>
+</td>
+<td><p>Max limit of y velocity of the sprite.</p></td>
+<td>
+<code>None</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Sprite.get_layer">
+<code class="highlight language-python"><span class="n">get_layer</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite.get_layer" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Get the layer in which the sprite is located.</p>
+<p>A larger number means the sprite is in a more upper layer.</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>int</code>
+</td>
+<td><p>The layer in which the sprite is located.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Sprite.kill">
+<code class="highlight language-python"><span class="n">kill</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite.kill" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Kill the sprite, so it will be removed by the manager.</p>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Sprite.kill_after_n_frames">
+<code class="highlight language-python"><span class="n">kill_after_n_frames</span><span class="p">(</span><span class="n">num</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite.kill_after_n_frames" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Kill the sprite in a delayed manner.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>num</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>The number of frames after which the sprite will be killed.
+For example, given 20 FPS,
+setting 40 will kill the sprite after 2 seconds.</p></td>
+<td>
+<em>required</em>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Sprite.set_layer">
+<code class="highlight language-python"><span class="n">set_layer</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite.set_layer" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Set the layer in which the sprite is located.</p>
+<p>A larger number means the sprite is in a more upper layer.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>layer</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>The layer in which the sprite is located.</p></td>
+<td>
+<em>required</em>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Sprite.setup_animation">
+<code class="highlight language-python"><span class="n">setup_animation</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">fpstep</span><span class="p">)</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite.setup_animation" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>Setup animation for the sprite.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>The start index of the images for animation.</p></td>
+<td>
+<em>required</em>
+</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>The length of the images for animation.</p></td>
+<td>
+<em>required</em>
+</td>
+</tr>
+<tr>
+<td><code>fpstep</code></td>
+<td>
+<code>int</code>
+</td>
+<td><p>Frames per step for animation speed.</p></td>
+<td>
+<em>required</em>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="micropython-appengine.Sprite.update">
+<code class="highlight language-python"><span class="n">update</span><span class="p">()</span></code>
+<a class="headerlink" href="#micropython-appengine.Sprite.update" title="Permanent link">#</a></h3>
+<div class="doc doc-contents">
+<p>This method may implement the logic of the sprite.</p>
+<p>It is called before every frame.
+A passive sprite may not override it.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Home" class="md-footer__link md-footer__link--prev" href=".." rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 <a href="https://github.com/jacklinquan">Quan Lin</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/jacklinquan" rel="noopener" target="_blank" title="jacklinquan on GitHub">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+<script src="../js/print-site.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js"></script>
+</body>
+</html>

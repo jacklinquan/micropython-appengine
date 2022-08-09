@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1024"
+   height="1024"
+   viewBox="0 0 270.93333 270.93335"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="logo_LQ_20210326.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient2895"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2893" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="304.91742"
+     inkscape:cy="503.40537"
+     inkscape:document-units="px"
+     inkscape:current-layer="g63"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g63"
+       transform="scale(0.26458334)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <path
+         id="rect10"
+         style="fill:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+         d="M 967.55859,0 C 431.53088,0 0,431.53088 0,967.55859 v 967.55861 967.5605 967.5586 h 967.55859 967.55861 967.5605 c 536.0278,0 967.5586,-431.5308 967.5586,-967.5586 V 967.55859 0 h -967.5586 z"
+         transform="scale(0.26458333)" />
+      <g
+         id="g2938"
+         style="fill-opacity:1;fill:#ffffff">
+        <path
+           style="fill:#ffffff;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+           d="M 256,256 128,384 V 896 H 768 L 640,768 H 256 Z"
+           id="path44"
+           sodipodi:nodetypes="ccccccc" />
+        <path
+           id="path56"
+           style="fill:#ffffff;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+           d="M 384 128 L 384 640 L 768 640 L 896 768 L 896 128 L 384 128 z M 512 256 L 768 256 L 768 512 L 640 384 L 640 512 L 512 512 L 512 256 z " />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,3 @@
+Column1,Column2,Column3
+**Item1**,1,`Text1` ==mark==
+*Item2*,2,`Text2` ~~delete~~
