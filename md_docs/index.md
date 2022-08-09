@@ -1,6 +1,6 @@
 # micropython-appengine
 
-A MicroPython app engine. Documentation is under construction.
+A MicroPython app engine.
 
 This module works under MicroPython and it is tested with MicroPython V1.19.1.
 
