@@ -7,11 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="A MicroPython app engine." name="description"/>
 <meta content="Quan Lin" name="author"/>
-<link href="assets/images/favicon.png" rel="icon"/>
+<link href="assets/images/favicon_LQ_48x48.png" rel="icon"/>
 <meta content="mkdocs-1.3.1, mkdocs-material-8.3.9" name="generator"/>
 <title>micropython-appengine</title>
 <link href="assets/stylesheets/main.1d29e8d0.min.css" rel="stylesheet"/>
 <link href="assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<meta content="#4051b5" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -24,11 +25,12 @@
 <link href="css/print-site.css" rel="stylesheet"/>
 <link href="css/print-site-material.css" rel="stylesheet"/>
 <link href="assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="assets/css/my_extra.css" rel="stylesheet"/>
 <link href="assets/css/material.css" rel="stylesheet"/>
 <link href="assets/css/mkdocstrings.css" rel="stylesheet"/>
 <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
-<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<body data-md-color-accent="purple" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -42,7 +44,7 @@
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="micropython-appengine" class="md-header__button md-logo" data-md-component="logo" href="." title="micropython-appengine">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="assets/images/logo_LQ_20210326.svg"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -111,10 +113,10 @@
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="micropython-appengine" class="md-nav__button md-logo" data-md-component="logo" href="." title="micropython-appengine">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="assets/images/logo_LQ_20210326.svg"/>
 </a>
     micropython-appengine
   </label>
@@ -150,28 +152,9 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#simple-demo">
-    Simple Demo
+<a class="md-nav__link" href="#usage">
+    Usage
   </a>
-<nav aria-label="Simple Demo" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hardware">
-    Hardware
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#firmware">
-    Firmware
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#software">
-    Software
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -180,49 +163,6 @@
 <a class="md-nav__link" href="api/">
         API Reference
       </a>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#installation">
-    Installation
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#simple-demo">
-    Simple Demo
-  </a>
-<nav aria-label="Simple Demo" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hardware">
-    Hardware
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#firmware">
-    Firmware
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#software">
-    Software
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -239,229 +179,13 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">upip</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">'micropython-appengine'</span><span class="p">)</span>
 </code></pre></div>
 <p>Alternatively just copy <code>appengine.py</code> to the MicroPython device.</p>
-<h2 id="simple-demo">Simple Demo<a class="headerlink" href="#simple-demo" title="Permanent link">#</a></h2>
-<h3 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">#</a></h3>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <ul>
-<li>ESP32 DevKitC</li>
-<li>SSD1306 128x64 OLED with I2C interface<ul>
-<li><code>SCL</code> on pin 16</li>
-<li><code>SDA</code> on pin 17</li>
+<li>Subclass <code>InputDevice</code> for the input device.</li>
+<li>Subclass <code>Screen</code> for the screen.</li>
+<li>Subclass <code>Sprite</code> for all the sprites needed in the app.</li>
+<li>Subclass <code>Manager</code> for the app main control.</li>
 </ul>
-</li>
-<li>Touchpads<ul>
-<li><code>BACK</code> on pin 32</li>
-<li><code>UP</code> on pin 15</li>
-<li><code>ENTER</code> on pin 4</li>
-<li><code>LEFT</code> on pin 27</li>
-<li><code>DOWN</code> on pin 12</li>
-<li><code>RIGHT</code> on pin 2</li>
-</ul>
-</li>
-</ul>
-<h3 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link">#</a></h3>
-<ul>
-<li>MicroPython V1.19.1.</li>
-</ul>
-<h3 id="software">Software<a class="headerlink" href="#software" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="sd">"""An appengine simple demo.</span>
-
-<span class="sd">- Author: Quan Lin</span>
-<span class="sd">- License: MIT</span>
-<span class="sd">"""</span>
-
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span>
-<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">I2C</span><span class="p">,</span> <span class="n">TouchPad</span>
-<span class="kn">from</span> <span class="nn">framebuf</span> <span class="kn">import</span> <span class="n">FrameBuffer</span><span class="p">,</span> <span class="n">MONO_VLSB</span>
-<span class="kn">from</span> <span class="nn">ssd1306</span> <span class="kn">import</span> <span class="n">SSD1306_I2C</span>
-<span class="kn">from</span> <span class="nn">appengine</span> <span class="kn">import</span> <span class="n">InputDevice</span><span class="p">,</span> <span class="n">Screen</span><span class="p">,</span> <span class="n">Sprite</span><span class="p">,</span> <span class="n">Manager</span>
-
-
-<span class="k">class</span> <span class="nc">GameKeyBoard</span><span class="p">(</span><span class="n">InputDevice</span><span class="p">):</span>
-    <span class="n">NUM_OF_KEYS</span> <span class="o">=</span> <span class="mi">6</span>
-    <span class="n">BACK</span><span class="p">,</span> <span class="n">UP</span><span class="p">,</span> <span class="n">ENTER</span><span class="p">,</span> <span class="n">LEFT</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">RIGHT</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">NUM_OF_KEYS</span><span class="p">))</span>
-
-    <span class="n">PIN_BACK</span> <span class="o">=</span> <span class="mi">32</span>
-    <span class="n">PIN_UP</span> <span class="o">=</span> <span class="mi">15</span>
-    <span class="n">PIN_ENTER</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="n">PIN_LEFT</span> <span class="o">=</span> <span class="mi">27</span>
-    <span class="n">PIN_DOWN</span> <span class="o">=</span> <span class="mi">12</span>
-    <span class="n">PIN_RIGHT</span> <span class="o">=</span> <span class="mi">2</span>
-
-    <span class="n">THRE_BACK</span> <span class="o">=</span> <span class="mi">690</span>
-    <span class="n">THRE_UP</span> <span class="o">=</span> <span class="mi">620</span>
-    <span class="n">THRE_ENTER</span> <span class="o">=</span> <span class="mi">570</span>
-    <span class="n">THRE_LEFT</span> <span class="o">=</span> <span class="mi">570</span>
-    <span class="n">THRE_DOWN</span> <span class="o">=</span> <span class="mi">590</span>
-    <span class="n">THRE_RIGHT</span> <span class="o">=</span> <span class="mi">520</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="n">TouchPad</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PIN_BACK</span><span class="p">)),</span>
-            <span class="n">TouchPad</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PIN_UP</span><span class="p">)),</span>
-            <span class="n">TouchPad</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PIN_ENTER</span><span class="p">)),</span>
-            <span class="n">TouchPad</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PIN_LEFT</span><span class="p">)),</span>
-            <span class="n">TouchPad</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PIN_DOWN</span><span class="p">)),</span>
-            <span class="n">TouchPad</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PIN_RIGHT</span><span class="p">)),</span>
-        <span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_thresholds</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">THRE_BACK</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">THRE_UP</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">THRE_ENTER</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">THRE_LEFT</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">THRE_DOWN</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">THRE_RIGHT</span><span class="p">,</span>
-        <span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys_all</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NUM_OF_KEYS</span><span class="p">))</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys_on</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys_off</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_all</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_on</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys_pressed</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys_released</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">old_keys_on</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_on</span>
-        <span class="n">old_keys_off</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_off</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys_on</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">)):</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_thresholds</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">keys_on</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys_off</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_all</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_on</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys_pressed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_on</span> <span class="o">-</span> <span class="n">old_keys_on</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">keys_released</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_off</span> <span class="o">-</span> <span class="n">old_keys_off</span>
-
-
-<span class="k">class</span> <span class="nc">GameScreen</span><span class="p">(</span><span class="n">Screen</span><span class="p">):</span>
-    <span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">128</span>
-    <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">64</span>
-
-    <span class="n">I2C_SCL</span> <span class="o">=</span> <span class="mi">16</span>
-    <span class="n">I2C_SDA</span> <span class="o">=</span> <span class="mi">17</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-
-        <span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">scl</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">I2C_SCL</span><span class="p">),</span> <span class="n">sda</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">I2C_SDA</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="n">SSD1306_I2C</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">WIDTH</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">HEIGHT</span><span class="p">,</span> <span class="n">i2c</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">WIDTH</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">HEIGHT</span>
-
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-
-<span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
-    <span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">8</span>
-    <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">8</span>
-
-    <span class="n">FB_ALIVE0</span> <span class="o">=</span> <span class="n">FrameBuffer</span><span class="p">(</span>
-        <span class="nb">bytearray</span><span class="p">(</span><span class="n">WIDTH</span> <span class="o">*</span> <span class="n">ceil</span><span class="p">(</span><span class="n">HEIGHT</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)),</span>
-        <span class="n">WIDTH</span><span class="p">,</span>
-        <span class="n">HEIGHT</span><span class="p">,</span>
-        <span class="n">MONO_VLSB</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">FB_ALIVE0</span><span class="o">.</span><span class="n">fill_rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="n">FB_ALIVE1</span> <span class="o">=</span> <span class="n">FrameBuffer</span><span class="p">(</span>
-        <span class="nb">bytearray</span><span class="p">(</span><span class="n">WIDTH</span> <span class="o">*</span> <span class="n">ceil</span><span class="p">(</span><span class="n">HEIGHT</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)),</span>
-        <span class="n">WIDTH</span><span class="p">,</span>
-        <span class="n">HEIGHT</span><span class="p">,</span>
-        <span class="n">MONO_VLSB</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">FB_ALIVE1</span><span class="o">.</span><span class="n">fill_rect</span><span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">4</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">//</span> <span class="mi">4</span><span class="p">,</span> <span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">GameScreen</span><span class="o">.</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">2</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">GameScreen</span><span class="o">.</span><span class="n">HEIGHT</span> <span class="o">//</span> <span class="mi">2</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">WIDTH</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">HEIGHT</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">imgs</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">FB_ALIVE0</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">FB_ALIVE1</span><span class="p">,</span>
-        <span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setup_animation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"player"</span>
-
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">keyboard</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">input_device</span>
-
-        <span class="k">if</span> <span class="n">GameKeyBoard</span><span class="o">.</span><span class="n">UP</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">keys_on</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
-        <span class="k">elif</span> <span class="n">GameKeyBoard</span><span class="o">.</span><span class="n">DOWN</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">keys_on</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">3</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="mi">0</span>
-
-        <span class="k">if</span> <span class="n">GameKeyBoard</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">keys_on</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
-        <span class="k">elif</span> <span class="n">GameKeyBoard</span><span class="o">.</span><span class="n">RIGHT</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">keys_on</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="mi">3</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="mi">0</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">clamp_position</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GameScreen</span><span class="o">.</span><span class="n">HEIGHT</span><span class="p">,</span> <span class="n">GameScreen</span><span class="o">.</span><span class="n">WIDTH</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">GameKeyBoard</span><span class="o">.</span><span class="n">ENTER</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">keys_pressed</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"`Enter` is pressed."</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">OverlayText</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
-    <span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">128</span>
-    <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">8</span>
-
-    <span class="n">FB</span> <span class="o">=</span> <span class="n">FrameBuffer</span><span class="p">(</span>
-        <span class="nb">bytearray</span><span class="p">(</span><span class="n">WIDTH</span> <span class="o">*</span> <span class="n">ceil</span><span class="p">(</span><span class="n">HEIGHT</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)),</span>
-        <span class="n">WIDTH</span><span class="p">,</span>
-        <span class="n">HEIGHT</span><span class="p">,</span>
-        <span class="n">MONO_VLSB</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">WIDTH</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">HEIGHT</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">imgs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">FB</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">colourkey</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_overlay</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">set_layer</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">FB</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-        <span class="n">fps_objs_text</span> <span class="o">=</span> <span class="s2">"FPS:</span><span class="si">{:3d}</span><span class="s2"> OBJs:</span><span class="si">{:3d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">actual_fps</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">),</span>
-            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">get_sprites</span><span class="p">()),</span>
-        <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">FB</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">fps_objs_text</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">GameManager</span><span class="p">(</span><span class="n">Manager</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">input_device</span> <span class="o">=</span> <span class="n">GameKeyBoard</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">GameScreen</span><span class="p">()</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_sprite</span><span class="p">(</span><span class="n">Player</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_sprite</span><span class="p">(</span><span class="n">OverlayText</span><span class="p">())</span>
-
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">GameKeyBoard</span><span class="o">.</span><span class="n">BACK</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_device</span><span class="o">.</span><span class="n">keys_released</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"`Back` is released. Exiting..."</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
-            <span class="k">return</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">GameManager</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</code></pre></div>
 </article>
 </div>
 </div>
@@ -499,6 +223,9 @@
 <a class="md-social__link" href="https://github.com/jacklinquan" rel="noopener" target="_blank" title="jacklinquan on GitHub">
 <svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
+<a class="md-social__link" href="/print_page" rel="noopener" target="_blank" title="print site">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M448 192H64c-35.35 0-64 28.7-64 64v96c0 17.67 14.33 32 32 32h32v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h32c17.67 0 32-14.33 32-32v-96c0-35.3-28.7-64-64-64zm-64 256H128v-96h256v96zm48-152c-13.25 0-24-10.75-24-24 0-13.27 10.75-24 24-24s24 10.73 24 24c0 13.3-10.7 24-24 24zM128 64h229.5L384 90.51V160h64V77.25c0-8.484-3.375-16.62-9.375-22.62l-45.25-45.25C387.4 3.375 379.2 0 370.8 0H96C78.34 0 64 14.33 64 32v128h64V64z"></path></svg>
+</a>
 </div>
 </div>
 </div>
@@ -507,7 +234,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script id="__config" type="application/json">{"base": ".", "features": ["toc.integrate"], "search": "assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="assets/javascripts/bundle.6c7ad80a.min.js"></script>
 <script src="js/print-site.js"></script>
 <script src="assets/js/config.js"></script>

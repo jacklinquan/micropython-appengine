@@ -20,6 +20,24 @@ site_dir: docs
 # Configuration
 theme:
     name: material
+    language: en
+    features:
+        # - navigation.instant
+        # - navigation.sections
+        # - navigation.tabs
+        # - navigation.expand
+        - toc.integrate
+    palette:
+        scheme: default
+        primary: indigo
+        accent: purple
+    font:
+        text: Roboto
+        code: Roboto Mono
+    favicon: assets/images/favicon_LQ_48x48.png
+    logo: assets/images/logo_LQ_20210326.svg
+    # icon:
+        # logo: logo
 
 # Plugins
 plugins:
@@ -52,13 +70,18 @@ plugins:
 
 # Customization
 extra:
+    # version:
+        # provider: mike
     social:
         - icon: fontawesome/brands/github
           link: https://github.com/jacklinquan
           name: jacklinquan on GitHub
+        - icon: fontawesome/solid/print
+          link: /print_page
+          name: print site
 
 extra_css:
-    # - assets/css/my_extra.css
+    - assets/css/my_extra.css
     - assets/css/material.css
     - assets/css/mkdocstrings.css
 
@@ -112,4 +135,5 @@ extra_javascript:
 # Page tree
 nav:
     - Home: index.md
-    - API Reference: api.md
+    - api.md
+    - ... | blog/**
