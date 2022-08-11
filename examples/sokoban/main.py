@@ -8,7 +8,7 @@ import os
 from math import ceil
 from collections import namedtuple
 import uasyncio as asyncio
-from machine import Pin, I2C, TouchPad
+from machine import Pin, I2C, TouchPad, freq
 from framebuf import FrameBuffer, MONO_VLSB
 from ssd1306 import SSD1306_I2C
 from microbmp import MicroBMP
@@ -730,4 +730,5 @@ class GameManager(Manager):
 
 
 if __name__ == "__main__":
+    freq(240000000)
     asyncio.run(GameManager().arun())
