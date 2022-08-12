@@ -30,4 +30,6 @@
 
 ## Screen Shot
 
-![plane screenshot](plane_screenshot.bmp)
+![plane screenshot 1](plane_screenshot_1.bmp)
+![plane screenshot 2](plane_screenshot_2.bmp)
+![plane screenshot 3](plane_screenshot_3.bmp)

@@ -226,42 +226,133 @@ class Missile(Sprite):
             self.kill()
 
 
-class OverlayText(Sprite):
-    WIDTH = 128
-    HEIGHT = 8
-
-    FB = FrameBuffer(
-        bytearray(WIDTH * ceil(HEIGHT / 8)),
-        WIDTH,
-        HEIGHT,
-        MONO_VLSB,
-    )
+class Overlay(Sprite):
+    H_LEFT, H_CENTER, H_RIGHT = tuple(range(1, 4))
+    V_TOP, V_CENTER, V_BOTTOM = tuple(range(1, 4))
 
     def __init__(self):
         super().__init__()
 
-        self.x = 0
-        self.y = 0
-        self.w = self.WIDTH
-        self.h = self.HEIGHT
-        self.imgs = [self.FB]
-        self.colourkey = 0
         self.is_overlay = True
         self.set_layer(255)
 
-    def update(self):
-        self.FB.fill(0)
+        self._lines = []
+        self._has_outline = False
+        self._invert = False
 
+    def set_text(
+        self,
+        text=None,
+        anchor_h=None,
+        anchor_v=None,
+        has_outline=None,
+        invert=None,
+    ):
+        if text is not None:
+            self._lines = text.splitlines()
+
+        if has_outline is not None:
+            self._has_outline = has_outline
+
+        if invert is not None:
+            self._invert = invert
+
+        extra_len = 1 if self._has_outline else 0
+        self.w = (
+            (max(len(line) for line in self._lines) + extra_len) * 8
+            if self._lines
+            else 0
+        )
+        self.h = (len(self._lines) + extra_len) * 8
+
+        if anchor_h == self.H_LEFT:
+            self.x = 0
+        elif anchor_h == self.H_CENTER:
+            self.x = (GameScreen.WIDTH - self.w) / 2
+        elif anchor_h == self.H_CENTER:
+            self.x = GameScreen.WIDTH - self.w
+
+        if anchor_v == self.V_TOP:
+            self.y = 0
+        elif anchor_v == self.V_CENTER:
+            self.y = (GameScreen.HEIGHT - self.h) / 2
+        elif anchor_v == self.V_BOTTOM:
+            self.y = GameScreen.HEIGHT - self.h
+
+        fb = FrameBuffer(
+            bytearray(self.w * ceil(self.h / 8)),
+            self.w,
+            self.h,
+            MONO_VLSB,
+        )
+
+        fb.fill(1 if self._invert else 0)
+        if self._has_outline:
+            fb.rect(2, 2, self.w - 4, self.h - 4, 0 if self._invert else 1)
+        margin = 4 if self._has_outline else 0
+        for i, line in enumerate(self._lines):
+            fb.text(line, margin, i * 8 + margin, 0 if self._invert else 1)
+
+        self.imgs = [fb]
+
+
+class PopUp(Overlay):
+    WIDTH = 15
+
+    def __init__(self, name="", text="", buttons=None):
+        super().__init__()
+
+        self.name = name
+        self._has_outline = True
+        self.buttons = buttons or ["OK"]
+        self.result = None
+
+        if len(self.buttons) == 1:
+            btn_text = " " * (self.WIDTH - len(self.buttons[0])) + self.buttons[0]
+        else:
+            btn_text = (
+                self.buttons[0]
+                + " " * (self.WIDTH - len(self.buttons[0]) - len(self.buttons[1]))
+                + self.buttons[1]
+            )
+
+        self.set_text(
+            text + "\n" + btn_text,
+            Overlay.H_CENTER,
+            Overlay.V_CENTER,
+            True,
+            True,
+        )
+
+    def update(self):
+        keyboard = self.manager.input_device
+        if len(self.buttons) == 1:
+            if GameKeyBoard.ENTER in keyboard.keys_released:
+                self.result = self.buttons[0]
+        else:
+            if (
+                GameKeyBoard.ENTER not in keyboard.keys_on
+                and GameKeyBoard.BACK in keyboard.keys_released
+            ):
+                self.result = self.buttons[0]
+            if GameKeyBoard.ENTER in keyboard.keys_released:
+                self.result = self.buttons[1]
+
+
+class TopLabel(Overlay):
+    def __init__(self):
+        super().__init__()
+
+        self.colourkey = 0
+
+    def update(self):
         fps_objs_text = "FPS:{:3d} OBJs:{:3d}".format(
             int(self.manager.actual_fps + 0.5),
             len(self.manager.get_sprites()),
         )
         time_text = "Time: {:.1f}s".format(self.manager.time_elapsed / 1000)
-        self.FB.text(
-            time_text,  # fps_objs_text
-            0,
-            0,
-        )
+        # self.set_text(fps_objs_text)
+        self.set_text(time_text)
 
 
 class GameManager(Manager):
@@ -272,13 +363,9 @@ class GameManager(Manager):
         self.screen = GameScreen()
         self.screen.manager = self
 
-        self.player = Player()
-        self.add_sprite(self.player)
-        self.add_sprite(OverlayText())
-        self.set_missile_spawn_interval(1)
+        self._popup_result = {}
 
-        self.start_time = ticks_ms()
-        self.time_elapsed = 0
+        self.init_level()
 
     def set_missile_spawn_interval(self, spawn_interval):
         self.spawn_interval = spawn_interval
@@ -293,30 +380,67 @@ class GameManager(Manager):
 
     def check_collisions(self):
         for m in self.get_sprites(cls=Missile):
-            collision = self.player.check_collision(m)
-            if collision:
+            if self.player.check_collision(m):
                 m.kill()
                 self.player.set_state(Player.STATE_DEAD)
                 break
 
-    def update(self):
-        keyboard = self.input_device
-        if (
-            GameKeyBoard.ENTER not in keyboard.keys_on
-            and GameKeyBoard.BACK in keyboard.keys_released
-        ):
-            print("`Back` is released. Exiting...")
-            self.exit()
-            return
-
-        self.check_collisions()
         if self.player.state == Player.STATE_DEAD:
-            self.exit()
+            for m in self.get_sprites(cls=Missile):
+                m.vx = 0
+
+    def get_popup_result(self, k):
+        v = self._popup_result.get(k)
+        self._popup_result[k] = None
+        return v
+
+    def set_popup_result(self, k, v):
+        self._popup_result[k] = v
+
+    def popup(self, name="", text="", buttons=None):
+        self.add_sprite(PopUp(name, text, buttons))
+
+    def handle_popup(self):
+        popups = self.get_sprites(PopUp)
+        if popups:
+            current_popup = popups[-1]
+            if current_popup.result is not None:
+                self.set_popup_result(current_popup.name, current_popup.result)
+                current_popup.kill()
+            return True
+        return False
+
+    def init_level(self):
+        self.kill_sprites()
+
+        self.player = Player()
+        self.add_sprite(self.player)
+        self.add_sprite(TopLabel())
+        self.set_missile_spawn_interval(1)
+
+        self.start_time = ticks_ms()
+        self.time_elapsed = 0
+
+    def update(self):
+        if self.handle_popup():
             return
 
-        self.spawn_missile_routine()
+        if self.get_popup_result("Restart") == "YES":
+            self.init_level()
+            return
 
-        self.time_elapsed = ticks_diff(ticks_ms(), self.start_time)
+        if self.player.state == Player.STATE_DEAD:
+            keyboard = self.input_device
+            if (
+                GameKeyBoard.ENTER not in keyboard.keys_on
+                and GameKeyBoard.BACK in keyboard.keys_released
+            ):
+                self.popup("Restart", "Restart?\n", ["NO", "YES"])
+                return
+        else:
+            self.spawn_missile_routine()
+            self.time_elapsed = ticks_diff(ticks_ms(), self.start_time)
+            self.check_collisions()
 
 
 if __name__ == "__main__":

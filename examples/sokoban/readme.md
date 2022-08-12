@@ -32,9 +32,6 @@
 ## Screen Shot
 
 ![sokoban screenshot 1](sokoban_screenshot_1.bmp)
-
 ![sokoban screenshot 2](sokoban_screenshot_2.bmp)
-
 ![sokoban screenshot 3](sokoban_screenshot_3.bmp)
-
 ![sokoban screenshot 4](sokoban_screenshot_4.bmp)

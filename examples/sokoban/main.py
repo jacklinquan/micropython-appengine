@@ -526,9 +526,10 @@ class Overlay(Sprite):
 class PopUp(Overlay):
     WIDTH = 15
 
-    def __init__(self, text="", buttons=None):
+    def __init__(self, name="", text="", buttons=None):
         super().__init__()
 
+        self.name = name
         self._has_outline = True
         self.buttons = buttons or ["OK"]
         self.result = None
@@ -577,7 +578,7 @@ class GameManager(Manager):
         self.menu = Menu()
         self.board = SokobanBoard()
 
-        self._popup_result = None
+        self._popup_result = {}
         self.state = None
 
         self.init_splash()
@@ -592,24 +593,24 @@ class GameManager(Manager):
             self.screen.camera_target = None
             self.kill_sprites(CameraTarget)
 
-    def get_popup_result(self):
-        res = self._popup_result
-        self._popup_result = None
-        return res
+    def get_popup_result(self, k):
+        v = self._popup_result.get(k)
+        self._popup_result[k] = None
+        return v
 
-    def set_popup_result(self, res):
-        self._popup_result = res
+    def set_popup_result(self, k, v):
+        self._popup_result[k] = v
 
-    def popup(self, text="", buttons=None):
-        self.add_sprite(PopUp(text, buttons))
+    def popup(self, name="", text="", buttons=None):
+        self.add_sprite(PopUp(name, text, buttons))
 
     def handle_popup(self):
         popups = self.get_sprites(PopUp)
         if popups:
-            res = popups[0].result
-            if res is not None:
-                self.set_popup_result(res)
-                popups[0].kill()
+            current_popup = popups[-1]
+            if current_popup.result is not None:
+                self.set_popup_result(current_popup.name, current_popup.result)
+                current_popup.kill()
             return True
         return False
 
@@ -617,17 +618,18 @@ class GameManager(Manager):
         self.state = self.SPLASH
         self.kill_sprites()
 
-        self.popup(f"{'Sokoban':^{PopUp.WIDTH}s}\n", ["START"])
+        self.popup("Splash", f"{'Sokoban':^{PopUp.WIDTH}s}\n", ["START"])
 
     def handle_splash(self):
         if self.handle_popup():
             return
 
-        if self.get_popup_result() == "START":
+        if self.get_popup_result("Splash") == "START":
             self.init_menu()
 
     def init_menu(self):
         self.state = self.MENU
+        self.set_camera(None)
         self.kill_sprites()
 
         self.update_menu()
@@ -689,15 +691,13 @@ class GameManager(Manager):
             return
 
         if self.board.is_solved():
-            if self.get_popup_result() == "OK":
-                self.set_camera(None)
+            if self.get_popup_result("Solved") == "OK":
                 self.init_menu()
             else:
-                self.popup("Solved", ["OK"])
+                self.popup("Solved", "Solved!\n", ["OK"])
             return
 
-        if self.get_popup_result() == "YES":
-            self.set_camera(None)
+        if self.get_popup_result("Back") == "YES":
             self.init_menu()
             return
 
@@ -707,7 +707,7 @@ class GameManager(Manager):
             GameKeyBoard.ENTER not in keyboard.keys_on
             and GameKeyBoard.BACK in keyboard.keys_released
         ):
-            self.popup("Back to menu?\n", ["NO", "YES"])
+            self.popup("Back", "Back to menu?\n", ["NO", "YES"])
             return
 
         if not self.player.is_moving:

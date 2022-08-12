@@ -26,4 +26,4 @@
 
 ## Screen Shot
 
-![demo screenshot](demo_screenshot.bmp)
+![demo screenshot 1](demo_screenshot_1.bmp)

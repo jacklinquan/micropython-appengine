@@ -37,18 +37,17 @@ Alternatively just copy `appengine.py` to the MicroPython device.
 
 ### [Demo](examples/demo)
 
-![demo screenshot](examples/demo/demo_screenshot.bmp)
+![demo screenshot 1](examples/demo/demo_screenshot_1.bmp)
 
 ### [Plane](examples/plane)
 
-![plane screenshot](examples/plane/plane_screenshot.bmp)
+![plane screenshot 1](examples/plane/plane_screenshot_1.bmp)
+![plane screenshot 2](examples/plane/plane_screenshot_2.bmp)
+![plane screenshot 3](examples/plane/plane_screenshot_3.bmp)
 
 ### [Sokoban](examples/sokoban)
 
 ![sokoban screenshot 1](examples/sokoban/sokoban_screenshot_1.bmp)
-
 ![sokoban screenshot 2](examples/sokoban/sokoban_screenshot_2.bmp)
-
 ![sokoban screenshot 3](examples/sokoban/sokoban_screenshot_3.bmp)
-
 ![sokoban screenshot 4](examples/sokoban/sokoban_screenshot_4.bmp)
