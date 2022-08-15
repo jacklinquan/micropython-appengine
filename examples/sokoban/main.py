@@ -690,18 +690,15 @@ class GameManager(Manager):
         if self.handle_popup():
             return
 
-        if self.board.is_solved():
-            if self.get_popup_result("Solved") == "OK":
-                self.init_menu()
-            else:
-                self.popup("Solved", "Solved!\n", ["OK"])
+        keyboard = self.input_device
+
+        if keyboard.keys_released and self.board.is_solved():
+            self.popup("Solved", "Solved!\nBack to menu?\n", ["NO", "YES"])
             return
 
-        if self.get_popup_result("Back") == "YES":
+        if self.get_popup_result("Solved") == "YES":
             self.init_menu()
             return
-
-        keyboard = self.input_device
 
         if (
             GameKeyBoard.ENTER not in keyboard.keys_on
@@ -710,7 +707,11 @@ class GameManager(Manager):
             self.popup("Back", "Back to menu?\n", ["NO", "YES"])
             return
 
-        if not self.player.is_moving:
+        if self.get_popup_result("Back") == "YES":
+            self.init_menu()
+            return
+
+        if (not self.board.is_solved()) and (not self.player.is_moving):
             if GameKeyBoard.UP in keyboard.keys_on:
                 self.board.move(SokobanBoard.UP)
             elif GameKeyBoard.LEFT in keyboard.keys_on:
