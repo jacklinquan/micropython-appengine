@@ -77,7 +77,7 @@ extra:
           link: https://github.com/jacklinquan
           name: jacklinquan on GitHub
         - icon: fontawesome/solid/print
-          link: /print_page
+          link: https://jacklinquan.github.io/micropython-appengine/print_page
           name: print site
 
 extra_css:
